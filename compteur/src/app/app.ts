@@ -17,23 +17,13 @@ export class App {
     this.compteur = 600;
   }
 
-  increment10() {
-    this.compteur += 10;
+  increment(step = 1) {
+    this.compteur += step;
     this.checkCounter();
   }
 
-  increment1() {
-    this.compteur += 1;
-    this.checkCounter();
-  }
-
-  decrement10() {
-    this.compteur -= 10;
-    this.checkCounter();
-  }
-
-  decrement1() {
-    this.compteur -= 1;
+  decrement(step = 1) {
+    this.compteur -= step;
     this.checkCounter();
   }
 
@@ -46,7 +36,7 @@ export class App {
     const canvas = this.renderer2.createElement('canvas');
     this.renderer2.appendChild(this.elementRef.nativeElement, canvas);
     const myConfetti = confetti.create(canvas, {
-      resize: true
+      resize: true,
     });
     myConfetti();
   }
