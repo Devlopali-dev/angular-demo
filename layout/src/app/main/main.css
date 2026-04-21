@@ -1,0 +1,14 @@
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: calc(100vh - 200px);
+  line-height: 1.6;
+  color: #333;
+}
+
+main h1 {
+  color: #333;
+  border-bottom: 2px solid #ffca28;
+  padding-bottom: 0.5rem;
+}
