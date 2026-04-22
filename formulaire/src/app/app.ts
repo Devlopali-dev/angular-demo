@@ -15,6 +15,7 @@ export class App {
     motif: '',
     email: '',
   };
+  protected readonly title = 'Forms';
 
   protected onSubmit(form: any) {
     console.log('Formulaire envoyé :');
