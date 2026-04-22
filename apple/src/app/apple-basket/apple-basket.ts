@@ -8,20 +8,23 @@ import { AppleModel } from '../apple-model';
   styleUrl: './apple-basket.css',
 })
 export class AppleBasket {
-  pannier: AppleModel[] = []
+  apples: Array<AppleModel>;
   private id: number;
 
   constructor() {
-    this.pannier = []
+    this.apples = []
     this.id= 0
   }
 
   addApple() {
-    let index = this.pannier.length < 0 ? this.pannier.length + 1 : 1;
+    const newApple: AppleModel={
+      id: this.apples.reduce((prev, apple) =>
+            (prev > apple.id ? prev : apple.id), 0) + 1
+    }
+    this.apples = [...this.apples, newApple]
+  }
 
-    this.id = index++;
-    console.log('index', index);
-
-    this.pannier.push({ id: this.id})
+  deleteApple(apple: AppleModel) {
+    this.apples.splice(this.apples.indexOf(apple), 1);
   }
 }
