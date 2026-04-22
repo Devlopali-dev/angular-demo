@@ -1,0 +1,39 @@
+<form #monForm="ngForm" (ngSubmit)="onSubmit(monForm)">
+  <!-- FIRST NAME -->
+  <label>Prénom :
+    <input #firstNameRef="ngModel" [(ngModel)]="contact.firstName"
+           name="firstName" required type="text">
+  </label>
+  <div [hidden]="firstNameRef.valid || firstNameRef.pristine" class="alert">
+    Le prénom est obligatoire !
+  </div>
+
+  <!-- LAST NAME -->
+  <label>Nom :
+    <input #lastNameRef="ngModel" [(ngModel)]="contact.lastName"
+           name="lastName" required type="text">
+  </label>
+  <div [hidden]="lastNameRef.valid || lastNameRef.pristine" class="alert">
+    Le nom est obligatoire !
+  </div>
+
+  <!-- EMAIL -->
+  <label>Email :
+    <input #emailRef="ngModel" [(ngModel)]="contact.email"
+           name="email" required type="email">
+  </label>
+  <div [hidden]="emailRef.valid || emailRef.pristine" class="alert">
+    L'email est obligatoire !
+  </div>
+
+  <!-- Motif du contact -->
+  <label>Motif du contact :
+    <input #motifRef="ngModel" [(ngModel)]="contact.motif"
+           name="motif" required type="text">
+  </label>
+  <div [hidden]="motifRef.valid || motifRef.pristine" class="alert">
+    Le motif du contact est obligatoire !
+  </div>
+
+  <button [disabled]="!monForm.form.valid" type="submit">Envoyer</button>
+</form>
