@@ -1,5 +1,7 @@
-
-
 <img
-  (click)="deleteApple()" class="apple" src="/apple.avif"  alt="apple"
+  class="apple"
+  [src]="appleUrl"
+  alt="apple"
+  title="Pomme n°{{ index + 1 }}"
+  (click)="deleteApple.emit(apple)"
 />

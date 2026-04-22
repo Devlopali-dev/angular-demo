@@ -1,4 +1,9 @@
-<div>Nombre de pommes : {{ apples.length}}</div>
+<div>Nombre de pommes : {{ apples.length }}</div>
 
+<button (click)="addApple()">Ajouter une pomme</button>
 
-<button (click)="addApple()" >Ajouter une pomme</button>
+<div class="apples-grid">
+  @for (apple of apples; track apple.id; let i = $index) {
+    <app-apple [apple]="apple" [index]="i" (deleteApple)="deleteApple($event)"></app-apple>
+  }
+</div>

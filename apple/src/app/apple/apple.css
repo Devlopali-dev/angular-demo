@@ -1,0 +1,13 @@
+.apple {
+  height: 64px;
+  width: 64px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.15s, opacity 0.15s;
+  object-fit: contain;
+}
+
+.apple:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}

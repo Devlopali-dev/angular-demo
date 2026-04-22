@@ -9,11 +9,11 @@ import { AppleModel } from '../apple-model';
 })
 export class Apple {
 
-  static appleUrl : string = '/apple.jpeg'
+  appleUrl : string = '/apple.jpeg'
 
   @Input() apple : AppleModel = {id: -1}
+  @Input() index : number = 0
   @Output() deleteApple = new EventEmitter<AppleModel>();
-  @Output() addApple = new EventEmitter<AppleModel>();
 
 
 }
