@@ -4,7 +4,7 @@ import { AppleBasket } from './apple-basket/apple-basket';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppleBasket],
+  imports: [AppleBasket],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
